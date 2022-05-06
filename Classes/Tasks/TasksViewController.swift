@@ -33,7 +33,7 @@ class TasksViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+  
         self.addTaskButton.layer.cornerRadius = self.addTaskButton.bounds.height / 2
 
         self.setDefaultSorting()
