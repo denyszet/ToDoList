@@ -42,7 +42,6 @@ class HomeViewController: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
 		self.showBulletinView()
     }
     
@@ -76,6 +75,7 @@ class HomeViewController: BaseViewController {
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.accessibilityIdentifier = "homeTableView"
         
 		NotificationCenter.default.addObserver(self, selector: #selector(self.shouldReloadDataNotification), name: Config.Notifications.shouldReloadData, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(self.newCloudDataReceived(_:)), name: Notifications.cloudKitDataDidChangeRemotely.name, object: nil)

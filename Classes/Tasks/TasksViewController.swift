@@ -90,6 +90,7 @@ class TasksViewController: BaseViewController {
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.accessibilityIdentifier = "tasksTableView"
         
         self.searchController.searchResultsUpdater = self
         
