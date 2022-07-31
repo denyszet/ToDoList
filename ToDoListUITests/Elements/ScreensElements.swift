@@ -8,7 +8,7 @@
 
 import XCTest
 class ToDoListElements {
-	
+	// Group screen element and attached relevant element type thus in case of any changed/issues it is easier and faster to detect and update label
 	enum ScreensElements: String {
 		case welcom = "Welcome to ToDoList"
 		case continueButton = "Continue"
@@ -33,6 +33,7 @@ class ToDoListElements {
 			}
 		}
 	}
+	
 	enum taskName:String {
 		case addTask = "To write a test"
 		case editTask = "  and to run a test"
@@ -44,7 +45,6 @@ class ToDoListElements {
 			XCUIApplication().textViews.element.typeText(taskName.rawValue)
 			ToDoListElements.ScreensElements.saveButton.element.tap()
 		case .editTask:
-			//as a improvements for this step is to add identofier in the code and use string interpolation to make identifier unique for each cell
 			XCUIApplication().cells.element(boundBy: 0).tap()
 			XCUIApplication().cells.element(boundBy: 0).tap()
 			ToDoListElements.ScreensElements.editButton.element.tap()
@@ -55,6 +55,8 @@ class ToDoListElements {
 	func enterTaskName(_ name: ToDoListElements.taskName) {
 		enter(taskName: name)
 	}
+	
+	// Confirm if task was created by matching All Tasks with updated value 1
 	func createdTask() {
 		XCUIApplication().cells
 			.descendants(matching: .staticText).matching(NSPredicate(format: "label = '1'", "All Tasks"))

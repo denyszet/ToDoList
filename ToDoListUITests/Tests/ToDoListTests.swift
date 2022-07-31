@@ -9,8 +9,10 @@
 import XCTest
 
 class ToDoListTests: ToDoListSteps {
-	
-	func test_userAddTask() {
+
+	//MARK: Main tests to run
+
+	func test_userAddEditCompleteTask() {
 		userPassOnBoarding()
 		userAddTask()
 		userEditTask()
