@@ -69,7 +69,7 @@ class TasksViewController: BaseViewController {
 		self.searchController.searchBar.tintColor = UIColor.white
 //        self.searchController.searchBar.barTintColor = Utils().getCurrentThemeColor()
 //        self.navigationController?.view.backgroundColor = Utils().getCurrentThemeColor()
-        
+		if #available(iOS 13.0, *) {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = Utils().getCurrentThemeColor()
@@ -84,7 +84,7 @@ class TasksViewController: BaseViewController {
         
         self.tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.size.width, height: 1))
     }
-    
+	}
     override func setupBindings() {
         super.setupBindings()
         
